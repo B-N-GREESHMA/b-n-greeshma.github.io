@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> 🌸 My To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="background"></div>
+  <div class="container">
+    <h1>🌸 My To-Do List</h1>
+
+    <div class="controls">
+      <input type="text" id="taskInput" placeholder="Add a  task..." />
+      <input type="datetime-local" id="dueDate" />
+      <select id="categoryInput">
+        <option value="all">🌼 All Categories</option>
+        <option value="personal">💖 Personal</option>
+        <option value="Important">📚 Important</option>
+        <option value="work">💼 Work</option>
+      </select>
+      <button onclick="addTask()">➕ Add</button>
+      <button id="clearAll">🗑️ Clear All</button>
+    </div>
+
+    <div class="filters">
+      <select id="statusFilter" onchange="loadTasks()">
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+      <select id="categoryFilter" onchange="loadTasks()">
+        <option value="all">All Categories</option>
+        <option value="personal">Personal</option>
+        <option value="Important">Important</option>
+        <option value="work">Work</option>
+      </select>
+      <button id="toggleDarkMode">🌓 Toggle Mode</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <audio id="completeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
